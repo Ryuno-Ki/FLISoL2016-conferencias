@@ -1,0 +1,65 @@
+{
+    "slide-1": {
+        "title": "Tools for teaching and learning the web",
+        "subtitle": "Thimble by Mozilla"
+    },
+    "slide-2": {
+        "title": "Material",
+        "first": "Internet-connected computers for each student or pair of students",
+        "second": "Pen and paper",
+        "third": "Projector"
+    },
+    "slide-3": {
+        "title": "Objectives",
+        "first": "Remixing a \"Keep calm\" poster",
+        "second": "Identify and use HTML tags",
+        "third": "Use the \"color picker\" to change the background color of a web page",
+        "fourth": "Change the images of a web page",
+        "fifth": "Use CSS to change the style and design of a web page",
+        "sixth": "Search the Internet for an image to replace an existing one"
+    },
+    "slide-4": {
+        "title": "Introduction"
+    },
+    "slide-5": {
+        "first": "What does make students successful?",
+        "second": "How is success? or How do you know you're succeeding in school?",
+        "third": "Are there other ways to succeed in school? Besides grades or test scores",
+        "objective": "Successful students have fun with what they do, the objective today is fun while learning"
+    },
+    "slide-6": {
+        "title": "What is a meme?"
+    },
+    "slide-10": {
+        "title": "Let's play charades"
+    },
+    "slide-11": {
+        "title": "Time to brainstorm",
+        "call-to-action": "Think of examples of memes with \"Keep calm\""
+    },
+    "slide-12": {
+        "title": "What is HTML?"
+    },
+    "slide-13": {
+        "title": "What is CSS"
+    },
+    "slide-15": {
+        "title": "Time to work!"
+    },
+    "slide-16": {
+        "title": "Reflect a little!"
+    },
+    "slide-17": {
+        "title": "The origin of \"Keep calm and Carry on\"",
+        "background": "<b>Keep calm and carry on</b> is a poster\nproduced by the UK government in 1939, at the beginning of World War II,\nin order to raise the morale of the citizens of the country under threat of imminent invasion.\nIt was little known and never used."
+    },
+    "slide-18": {
+        "title": "How can remixed message help keep positivism in difficult times?"
+    },
+    "slide-19": {
+        "title": "Where can I get more information?",
+        "first": "Other workshops on Thimble: <a href=\"https://thimble.mozilla.org/en/\" target=\"_blank\">https://thimble.mozilla.org/en/</a>",
+        "second": "Looking for more learning resources? <a href=\"https://teach.mozilla.org/\" target=\"_blank\">https://teach.mozilla.org/</a>",
+        "third": "Join Mozilla Hispano: <a href=\"https://www.mozilla-hispano.org/documentacion/Colabora\" target=\"_blank\">https://www.mozilla-hispano.org/documentacion/Colaboara</a>"
+    }
+}
