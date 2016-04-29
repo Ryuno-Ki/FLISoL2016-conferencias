@@ -1,0 +1,23 @@
+{
+  "name": "flisol2016-thimble",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Richard Armuelles"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Ryuno-Ki/FLISoL2016-conferencias",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "headjs": "^1.0.3",
+    "highlightjs": "9.0.0",
+    "reveal.js": "3.2.0"
+  }
+}
