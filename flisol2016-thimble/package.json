@@ -1,0 +1,15 @@
+{
+  "name": "flisol2016-thimble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Richard Armuelles",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bower": "^1.7.9"
+  }
+}

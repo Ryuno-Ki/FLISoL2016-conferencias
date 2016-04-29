@@ -209,9 +209,11 @@
 
         </div>
 
-        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
-        <script src="bower_components/reveal.js/js/reveal.js"></script>
-        <script>
+        <script src="bower_components/reveal.js/lib/js/head.min.js" type="text/javascript"></script>
+        <script src="bower_components/reveal.js/js/reveal.js" type="text/javascript"></script>
+        <script src="bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js" type="text/javascript"></script>
+        <script src="bower_components/i18next/i18next.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
 
           // Full list of configuration options available at:
           // https://github.com/hakimel/reveal.js#configuration
@@ -235,6 +237,79 @@
             ]
           });
 
+          window.i18nextRender = function(nodes, data) {
+              var replaceContent, i, len, node, key, value;
+              console.log("Rendering ", data, "on", nodes);
+
+              replaceContent = function(i18nKey, dict) {
+                  var pair, key, value;
+
+                  pair = i18nKey.split(".");
+                  if (pair.length === 0) { return false; }
+
+                  key = pair[0];
+                  if (!(key in dict)) { return false; }
+
+                  if (pair.length > 1) {
+                    return replaceContent(pair.slice(1).join("."), dict[key]);
+                  } else {
+                    return dict[key];
+                  }
+              };
+
+              for (i = 0, len = nodes.length; i < len; i++) {
+                node = nodes[i];
+                key = node.getAttribute("data-i18n");
+                value = replaceContent(key, data);
+                if (value) {
+                  console.log("Replacing " + key + " with " + value);
+                  node.innerHTML = value;
+                }
+              }
+          };
+
+          window.addEventListener("load", function() {
+            // I18N initialise
+            i18next
+              .use(i18nextXHRBackend)
+              .init({
+                "backend": {
+                  "loadPath": "locales/{{ns}}-{{lng}}.json",
+                  "parse": function(response) {
+                    var nodes, data;
+
+                    data = JSON.parse(response);
+                    nodes = document.querySelectorAll("[data-i18n]");
+                    window.i18nextRender(nodes, data);
+
+                    Reveal.addEventListener("slidechanged", function(event) {
+                        var nodes;
+
+                        nodes = event.currentSlide.querySelectorAll("[data-i18n]");
+                        window.i18nextRender(nodes, data);
+                    });
+
+                    /*
+                    Reveal.addEventListener("fragmentshown", function(event) {
+                        var nodes;
+
+                        nodes = [];
+                        if (event.fragment.hasAttribute("data-i18n")) { nodes.push(event.fragment) };
+                        window.i18nextRender(nodes, data);
+                    });
+                    */
+                  }
+                },
+                "resGetPath": "locales/__ns__-__lng__.json",
+                "detectLngQS": "lang",
+                "useCookie": false,
+                "load": "current",
+                "fallbackLng": ["en-US"],
+                "debug": true,
+                "sendMissing": true,
+                "sendType": "GET"
+              });
+          });
         </script>
     </body>
 
